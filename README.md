@@ -1,11 +1,11 @@
-# 🩰 Academia CREAR — Sitio Web Full Stack
+#  Academia CREAR — Sitio Web Full Stack
 
 Sitio web oficial de la **Academia de Danzas CREAR** de Córdoba, Argentina.  
 Desarrollado como proyecto universitario — **2do semestre AW2**.
 
 ---
 
-# 🗂 Estructura del proyecto
+# Estructura del proyecto
 
 ```bash
 academia-crear/
@@ -52,7 +52,7 @@ academia-crear/
 
 ---
 
-# 🚀 Cómo correr el proyecto
+#  Cómo correr el proyecto
 
 ## 1. Clonar e instalar
 
@@ -90,9 +90,9 @@ http://localhost:2026
 
 ---
 
-# 🔌 API REST — Endpoints
+#  API REST — Endpoints
 
-## 🔐 Autenticación
+## Autenticación
 
 | Método | Ruta             | Acceso | Descripción          |
 | ------- | ----------------- | ------- | -------------------- |
@@ -122,15 +122,15 @@ http://localhost:2026
 
 ---
 
-# 🩰 Clases
+#  Clases
 
 | Método | Ruta             | Acceso   | Descripción             |
 | ------- | ---------------- | -------- | ----------------------- |
 | GET     | /api/clases      | Público  | Listar clases           |
 | GET     | /api/clases/:id  | Público  | Obtener clase           |
-| POST    | /api/clases      | 🔐 Admin | Crear clase             |
-| PUT     | /api/clases/:id  | 🔐 Admin | Actualizar clase        |
-| DELETE  | /api/clases/:id  | 🔐 Admin | Eliminar clase          |
+| POST    | /api/clases      |  Admin | Crear clase             |
+| PUT     | /api/clases/:id  |  Admin | Actualizar clase        |
+| DELETE  | /api/clases/:id  |  Admin | Eliminar clase          |
 
 ### Query params
 
@@ -160,14 +160,14 @@ GET /api/clases?nivel=Avanzado
 | Método | Ruta              | Acceso   | Descripción                       |
 | ------- | ----------------- | -------- | --------------------------------- |
 | POST    | /api/alumnos      | Público  | Enviar inscripción                |
-| GET     | /api/alumnos      | 🔐 Admin | Ver inscripciones                 |
-| GET     | /api/alumnos/:id  | 🔐 Admin | Ver alumno                        |
-| PUT     | /api/alumnos/:id  | 🔐 Admin | Actualizar estado                 |
-| DELETE  | /api/alumnos/:id  | 🔐 Admin | Eliminar inscripción              |
+| GET     | /api/alumnos      |  Admin | Ver inscripciones                 |
+| GET     | /api/alumnos/:id  |  Admin | Ver alumno                        |
+| PUT     | /api/alumnos/:id  |  Admin | Actualizar estado                 |
+| DELETE  | /api/alumnos/:id  |  Admin | Eliminar inscripción              |
 
 ---
 
-# 🔐 Seguridad
+# Seguridad
 
 Las rutas protegidas requieren el header:
 
@@ -192,7 +192,7 @@ Duración del token: **8 horas**
 
 ---
 
-# 🎨 Frontend
+# Frontend
 
 | Página      | Ruta             | Descripción                          |
 | ------------ | ---------------- | ------------------------------------ |
@@ -203,7 +203,7 @@ Duración del token: **8 horas**
 
 ---
 
-# 🎨 Diseño visual
+#  Diseño visual
 
 ## Paleta de colores
 
@@ -221,7 +221,7 @@ Duración del token: **8 horas**
 
 ---
 
-# 🧩 Credenciales demo
+# Credenciales demo
 
 ```txt
 Usuario: admin
@@ -230,7 +230,7 @@ Contraseña: crear2026
 
 ---
 
-# 📦 Dependencias
+#  Dependencias
 
 ```json
 {
@@ -242,7 +242,5 @@ Contraseña: crear2026
 CAMBIAR A UNA TIPOGRAFIA MAS LEGIBLE!!!!!!! ---------
 
 
-# 👥 Equipo
 
-Proyecto universitario — **Academia de Danzas CREAR**  
-📍 Córdoba, Argentina · 2026
+Proyecto  — **Academia de Danzas CREAR**  - Córdoba, Argentina · 2026
