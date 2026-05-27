@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia CREAR — Panel Admin</title>
+  <link rel="stylesheet" href="/recursos/css/estilos.css">
+</head>
+<body>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<div id="cursor-trail"></div>
+
+<nav id="navbar">
+  <a class="nav-logo" href="/">
+    <svg class="nav-logo-svg" viewBox="0 0 170 195" fill="none">
+      <circle cx="85" cy="20" r="12" stroke="#0d0d0d" stroke-width="7" fill="none"/>
+      <path d="M30 58 C10 78 14 108 40 120 C66 132 108 115 138 95 C158 80 160 60 144 48" stroke="#0d0d0d" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M85 33 L83 175" stroke="#0d0d0d" stroke-width="7" stroke-linecap="round"/>
+      <path d="M83 115 L45 175" stroke="#0d0d0d" stroke-width="7" stroke-linecap="round"/>
+      <path d="M85 58 L132 30" stroke="#0d0d0d" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+    <div><span class="nav-title">CREAR</span><span class="nav-sub">PANEL ADMINISTRATIVO</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">INICIO</a></li>
+    <li><a href="/clases.html">CLASES</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-login" id="btn-logout" style="display:none">CERRAR SESIÓN</button>
+  </div>
+</nav>
+
+<!-- ═══ LOGIN ═══ -->
+<div id="login-section" class="login-page">
+  <div class="login-card">
+    <div class="login-logo" style="text-align:center;margin-bottom:32px"></div>
+    <h2 class="login-title">Panel Administrativo</h2>
+    <p class="login-sub">ACADEMIA CREAR</p>
+    <form id="form-login">
+      <div class="login-field"><label>USUARIO</label><input type="text" id="login-user" placeholder="admin" autocomplete="username"></div>
+      <div class="login-field"><label>CONTRASEÑA</label><input type="password" id="login-pass" placeholder="••••••••" autocomplete="current-password"></div>
+      <button type="submit" class="btn-login">INGRESAR</button>
+      <p class="login-err" id="login-err"></p>
+    </form>
+    <p class="login-hint">Demo: admin / crear2026</p>
+  </div>
+</div>
+
+<!-- ═══ ADMIN ═══ -->
+<div id="admin-section" style="display:none">
+  <div class="admin-page">
+    <div class="admin-layout">
+      <!-- Sidebar -->
+      <div class="admin-sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title">CREAR</div>
+          <div class="sidebar-sub">PANEL ADMINISTRATIVO</div>
+        </div>
+        <div class="sidebar-item active" data-panel="dashboard">DASHBOARD</div>
+        <div class="sidebar-item" data-panel="clases">GESTIÓN DE CLASES</div>
+        <div class="sidebar-item" data-panel="alumnos">INSCRIPCIONES</div>
+        <div class="sidebar-item" data-panel="usuarios">USUARIOS</div>
+        <div class="sidebar-logout" id="btn-logout-side">CERRAR SESIÓN</div>
+      </div>
+
+      <!-- Main content -->
+      <div class="admin-main">
+
+        <!-- DASHBOARD -->
+        <div id="panel-dashboard" class="panel active">
+          <div class="admin-head">
+            <h2 class="admin-title">Dashboard</h2>
+          </div>
+          <div class="admin-cards">
+            <div class="admin-card"><div class="admin-card-num" id="dash-clases">—</div><div class="admin-card-lbl">CLASES ACTIVAS</div></div>
+            <div class="admin-card"><div class="admin-card-num" id="dash-alumnos">—</div><div class="admin-card-lbl">INSCRIPCIONES</div></div>
+            <div class="admin-card"><div class="admin-card-num">25+</div><div class="admin-card-lbl">AÑOS DE TRAYECTORIA</div></div>
+          </div>
+          <div style="background:var(--white);padding:28px">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;margin-bottom:20px">Accesos rápidos</h3>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <button class="btn-add" onclick="document.querySelector('[data-panel=clases]').click()">GESTIONAR CLASES</button>
+              <button class="btn-add" style="background:var(--black)" onclick="document.querySelector('[data-panel=alumnos]').click()">VER INSCRIPCIONES</button>
+              <button class="btn-add" style="background:var(--gray-dark)" onclick="window.open('/','_blank')">VER SITIO</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CLASES -->
+        <div id="panel-clases" class="panel">
+          <div class="admin-head">
+            <h2 class="admin-title">Gestión de Clases</h2>
+            <button class="btn-add" id="btn-nueva-clase">+ NUEVA CLASE</button>
+          </div>
+          <div class="form-admin" id="form-clase">
+            <div class="form-admin-title" id="form-clase-title">Nueva Clase</div>
+            <input type="hidden" id="clase-id">
+            <div class="form-admin-grid">
+              <div class="fa-field"><label>NOMBRE</label><input type="text" id="clase-nombre" placeholder="Ej: Danza Clásica"></div>
+              <div class="fa-field"><label>NIVEL</label>
+                <select id="clase-nivel">
+                  <option>Inicial</option><option>Intermedio</option><option>Avanzado</option>
+                </select>
+              </div>
+              <div class="fa-field"><label>HORARIO 1</label><input type="text" id="clase-horario1" placeholder="Ej: Lunes 18:00 a 19:00"></div>
+              <div class="fa-field"><label>HORARIO 2 (opcional)</label><input type="text" id="clase-horario2" placeholder="Ej: Miércoles 17:00 a 18:00"></div>
+            </div>
+            <div class="fa-field" style="margin-top:16px"><label>DESCRIPCIÓN</label><textarea id="clase-desc"></textarea></div>
+            <div class="form-actions">
+              <button class="btn-save" id="btn-guardar-clase">GUARDAR</button>
+              <button class="btn-cancel" id="btn-cancelar-clase">CANCELAR</button>
+            </div>
+          </div>
+          <table class="admin-table" id="tabla-clases">
+            <thead><tr><th>NOMBRE</th><th>NIVEL</th><th>HORARIOS</th><th>ACCIONES</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <!-- ALUMNOS -->
+        <div id="panel-alumnos" class="panel">
+          <div class="admin-head">
+            <h2 class="admin-title">Inscripciones</h2>
+            <button class="btn-add" id="btn-nuevo-alumno">+ NUEVA INSCRIPCIÓN</button>
+          </div>
+          <div class="form-admin" id="form-alumno">
+            <div class="form-admin-title">Nueva Inscripción</div>
+            <div class="form-admin-grid">
+              <div class="fa-field"><label>NOMBRE</label><input type="text" id="al-nombre"></div>
+              <div class="fa-field"><label>APELLIDO</label><input type="text" id="al-apellido"></div>
+              <div class="fa-field"><label>EMAIL</label><input type="email" id="al-email"></div>
+              <div class="fa-field"><label>TELÉFONO</label><input type="tel" id="al-tel"></div>
+              <div class="fa-field"><label>DISCIPLINA</label><select id="al-disciplina"></select></div>
+              <div class="fa-field"><label>ESTADO</label>
+                <select id="al-estado"><option>Activo</option><option>Pendiente</option><option>Inactivo</option></select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-save" id="btn-guardar-alumno">GUARDAR</button>
+              <button class="btn-cancel" id="btn-cancelar-alumno">CANCELAR</button>
+            </div>
+          </div>
+          <table class="admin-table" id="tabla-alumnos">
+            <thead><tr><th>NOMBRE</th><th>EMAIL</th><th>DISCIPLINA</th><th>ESTADO</th><th>FECHA</th><th>ACCIONES</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <!-- USUARIOS -->
+        <div id="panel-usuarios" class="panel">
+          <div class="admin-head"><h2 class="admin-title">Usuarios del Sistema</h2></div>
+          <table class="admin-table">
+            <thead><tr><th>USUARIO</th><th>EMAIL</th><th>ROL</th><th>ESTADO</th></tr></thead>
+            <tbody>
+              <tr><td><strong>admin</strong></td><td>admin@crear.com</td><td><span class="badge-nivel badge-i">ADMIN</span></td><td>Activo</td></tr>
+            </tbody>
+          </table>
+          <div style="margin-top:20px;padding:20px 24px;background:var(--purple-faint);border-left:3px solid var(--purple)">
+            <p style="font-size:11px;color:var(--gray-dark);line-height:1.8">
+              🔐 La autenticación usa <strong>JWT + bcrypt</strong>.<br>
+              El token se guarda en <code>localStorage</code> y se envía en el header <code>Authorization: Bearer &lt;token&gt;</code>.<br>
+              Ver <code>middleware/auth.middleware.mjs</code> y <code>controllers/auth.controller.mjs</code>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/recursos/js/admin.js"></script>
+<script>
+  // Sync logout buttons
+  document.getElementById('btn-logout-side').addEventListener('click', () => {
+    document.getElementById('btn-logout').click();
+  });
+  document.getElementById('btn-logout').addEventListener('click', () => {
+    document.getElementById('btn-logout').style.display = 'none';
+  });
+</script>
+<script src="/recursos/js/cursor.js"></script>
+</body>
+</html>
