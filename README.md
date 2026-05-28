@@ -1,8 +1,5 @@
 #  Academia CREAR — Sitio Web Full Stack
 
-Sitio web oficial de la **Academia de Danzas CREAR** de Córdoba, Argentina.  
-Desarrollado como proyecto universitario — **2do semestre AW2**.
-
 ---
 
 # Estructura del proyecto
