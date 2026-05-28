@@ -244,3 +244,21 @@ CAMBIAR A UNA TIPOGRAFIA MAS LEGIBLE!!!!!!! ---------
 
 
 Proyecto  — **Academia de Danzas CREAR**  - Córdoba, Argentina · 2026
+
+/////////////////////////////////////////////////////////
+actualizar errores de la web en el dashboar (sacar el dashboard) -- cambiar por algo mas funcional
+falta asistencia
+ver temas de usuario
+agregar en inscripciones (el precio de clases y si abono o no)
+calendario para ver el tema de horarios y asistencia
+en el sitio web esconder el panel de admin que lo visualice solo el admin
+el boton de inscribirse debe ser mas grnade y vistoso, pero que siga manteniendo la misma estetica
+cambiar el seguidor pad(mouse)
+en alumnos activos ver
+
+poner EL LOGO ACA
+     |
+     |
+     |
+     |
+
